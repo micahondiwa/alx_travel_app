@@ -19,6 +19,16 @@ from django.urls import path, include
 from rest_framework import permissions
 from drf_yasg import openapi
 
+shema_view = get_schema_view(
+    openapi.Info(
+        title="ALX Travel API",
+        default_version='v1',
+        description="API documentation for ALX Travel App",
+    ),
+    public=True,
+    permissions_classes=(permissions.AllowAny,),
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
